@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Base styles for peaceful, spiritual aesthetic */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-attachment: fixed;
+}
+
+/* Accessible focus styles */
+:focus-visible {
+  outline: 2px solid #F59E0B; /* primary */
+  outline-offset: 2px;
+}
+
+/* Utility classes for sections */
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.gradient-hero {
+  background: linear-gradient(180deg, #FFFBEB 0%, #FDE68A 40%, #FFFFFF 100%);
+}
