@@ -2,10 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import LanguageSwitcher from './LanguageSwitcher'
 import { t } from '@/lib/translations'
 import type { Lang } from '@/lib/constants'
-import { Sparkles, Phone, User, Briefcase, Mail } from 'lucide-react'
+import { Sparkles, Phone, User, Briefcase, Mail, Menu, X } from 'lucide-react'
 
 type Props = {
   lang: Lang
@@ -13,12 +14,16 @@ type Props = {
 }
 
 export default function Navbar({ lang, onChangeLang }: Props) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const closeMenu = () => setIsMenuOpen(false)
+
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 backdrop-blur-xl shadow-lg border-b border-orange-200/50">
       <nav className="section-container h-20 flex items-center justify-between">
         {/* Logo Section */}
-        <Link href="#" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 p-2 shadow-lg group-hover:shadow-orange-300 transition-all duration-300 group-hover:scale-110">
+        <Link href="#" onClick={closeMenu} className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-600 p-2 shadow-lg group-hover:shadow-orange-300 transition-all duration-300 group-hover:scale-110">
             <Image
               src="/images/logo.png"
               alt="Diya Logo"
@@ -27,14 +32,14 @@ export default function Navbar({ lang, onChangeLang }: Props) {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-poppins font-bold text-xl bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+            <span className="font-poppins font-bold text-base sm:text-lg md:text-xl bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
               Acharya Durgesh
             </span>
             <span className="text-xs text-orange-600/70 font-medium">Vedic Scholar</span>
           </div>
         </Link>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center gap-8">
           <Link 
             href="#about" 
@@ -66,18 +71,83 @@ export default function Navbar({ lang, onChangeLang }: Props) {
           </Link>
         </div>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-4">
+        {/* Right Section - Desktop */}
+        <div className="hidden lg:flex items-center gap-4">
           <LanguageSwitcher lang={lang} onChange={onChangeLang} />
           <button
             type="button"
-            className="hidden sm:flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold shadow-lg hover:shadow-orange-300 hover:scale-105 transition-all duration-300"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold shadow-lg hover:shadow-orange-300 hover:scale-105 transition-all duration-300"
           >
             <Phone className="w-4 h-4" />
             <span>{t(lang, 'action.bookNow')}</span>
           </button>
         </div>
+
+        {/* Mobile Right Section - Only Hamburger */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 rounded-full hover:bg-orange-100 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-orange-600" />
+            ) : (
+              <Menu className="w-6 h-6 text-orange-600" />
+            )}
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-orange-200/50 shadow-xl animate-in slide-in-from-top-2 duration-200">
+          <div className="section-container py-4 space-y-2">
+            <Link 
+              href="#about" 
+              onClick={closeMenu}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 font-medium"
+            >
+              <User className="w-5 h-5" />
+              <span>{t(lang, 'nav.about')}</span>
+            </Link>
+            <Link 
+              href="#services" 
+              onClick={closeMenu}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 font-medium"
+            >
+              <Briefcase className="w-5 h-5" />
+              <span>{t(lang, 'nav.services')}</span>
+            </Link>
+            <Link 
+              href="#why" 
+              onClick={closeMenu}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 font-medium"
+            >
+              <Sparkles className="w-5 h-5" />
+              <span>{t(lang, 'nav.why')}</span>
+            </Link>
+            <Link 
+              href="#contact" 
+              onClick={closeMenu}
+              className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 font-medium"
+            >
+              <Mail className="w-5 h-5" />
+              <span>{t(lang, 'nav.contact')}</span>
+            </Link>
+            
+            {/* Mobile Book Now Button */}
+            <a 
+              href="tel:+917013272777"
+              onClick={closeMenu}
+              className="block w-full mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-center shadow-lg hover:shadow-orange-300 transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <Phone className="w-4 h-4" />
+              <span>{t(lang, 'action.bookNow')}</span>
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

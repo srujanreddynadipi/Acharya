@@ -29,7 +29,7 @@ export default function HeroSection({ lang }: Props) {
         <div className="relative rounded-xl overflow-hidden shadow-soft h-[400px] lg:h-[500px]">
           <Image
             src="/images/heroSection.jpg"
-            alt="Traditional Puja Ceremony at Trimbakeshwar - Pandit Ravi Guruji"
+            alt="Vedic Astrologer Acharya Durgesh Tiwari - Spiritual Ceremonies and Consultations"
             fill
             className="object-cover"
             priority

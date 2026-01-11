@@ -7,9 +7,9 @@ export const PALETTE = {
 } as const
 
 export const SITE = {
-  NAME: 'Trimbakeshwar Pooja Services',
+  NAME: 'Acharya Durgesh Tiwari',
   DESCRIPTION:
-    'Peaceful, authentic spiritual guidance and Trimbakeshwar pooja services. Book with trust and devotion.',
+    'Vedic Astrologer | Priest | Spiritual Consultant. Trained at Kashi Vishwavidyalaya, Varanasi. Expert in Jyotish Shastra, Vaidik-Tantrik Pujas, Vastu Shanti, and life event ceremonies. Available for online consultations and in-person rituals across India and abroad.',
 } as const
 
 export type Lang = 'en' | 'te' | 'hi'

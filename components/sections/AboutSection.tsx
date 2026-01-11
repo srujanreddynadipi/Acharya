@@ -10,7 +10,7 @@ type Props = { lang: Lang }
 export default function AboutSection({ lang }: Props) {
   return (
     <section id="about" className="section-container py-16">
-      <SectionHeading title={t(lang, 'about.title')} subtitle={"Vedic Scholar from Kashi Vishwavidyalaya, Varanasi. Dedicated to guiding devotees with scriptural wisdom and spiritual remedies."} center />
+      <SectionHeading title={t(lang, 'about.title')} subtitle={"Vedic Astrologer | Priest | Spiritual Consultant. Trained at Kashi Vishwavidyalaya, Varanasi. Expert in Jyotish Shastra, Vaidik-Tantrik Pujas, Vastu Shanti, and life event ceremonies. Available for online consultations and in-person rituals across India and abroad."} center />
       
       <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
         <div className="relative w-full max-w-sm aspect-square rounded-xl overflow-hidden shadow-soft">

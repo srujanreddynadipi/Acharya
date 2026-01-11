@@ -7,6 +7,7 @@ html, body {
 
 body {
   background-attachment: fixed;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
 /* Accessible focus styles */
@@ -17,7 +18,7 @@ body {
 
 /* Utility classes for sections */
 .section-container {
-  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  @apply max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8;
 }
 
 .card {
@@ -29,4 +30,35 @@ body {
 
 .gradient-hero {
   background: linear-gradient(180deg, #FFFBEB 0%, #FDE68A 40%, #FFFFFF 100%);
+}
+
+/* Mobile-first responsive text */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+  
+  h2 {
+    font-size: clamp(1.25rem, 4vw, 1.875rem);
+  }
+  
+  h3 {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+}
+
+/* Smooth animation for mobile menu */
+@keyframes slide-in-from-top-2 {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: slide-in-from-top-2 0.2s ease-out;
 }

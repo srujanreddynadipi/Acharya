@@ -23,7 +23,7 @@ export const translations: Record<Lang, Record<TKey, string>> = {
     'nav.why': 'Why Choose Us',
     'nav.contact': 'Contact',
     'action.bookNow': 'Book Now',
-    'hero.title': 'Durgesh tiwari, Nizamabad',
+    'hero.title': 'Acharya Durgesh Tiwari',
     'hero.subtitle': 'Vedic Astrologer | Priest | Spiritual Consultant. Trained at Kashi Vishwavidyalaya, Varanasi. Expert in Jyotish Shastra, Vaidik-Tantrik Pujas, Vastu Shanti, and life event ceremonies. Available for online consultations and in-person rituals across India and abroad.',
     'about.title': 'About Acharya Durgesh Tiwari',
     'services.title': 'My Services (Seva Prakar)',

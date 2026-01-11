@@ -6,25 +6,25 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700'], variable: '--font-poppins', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Durgesh tiwari Nizamabad | Kaal Sarp Dosh Puja | Pandit Ravi Guruji',
+  title: 'Acharya Durgesh Tiwari | Vedic Astrologer | Priest | Spiritual Consultant',
   description:
-    'Book Kaal Sarp Dosh Puja at Trimbakeshwar with Pandit Ravi Guruji. 30+ years experience, 32,000+ pujas performed. Expert in Mahamrityunjay Jaap, Narayan Nagabali, Rudrabhishekh.',
+    'Acharya Durgesh Tiwari - Vedic Astrologer, Priest, Spiritual Consultant trained at Kashi Vishwavidyalaya, Varanasi. Expert in Jyotish Shastra, Vaidik-Tantrik Pujas, Vastu Shanti, and life event ceremonies. Available for online consultations and in-person rituals across India and abroad.',
   icons: {
     icon: '/images/logo.png',
     apple: '/images/logo.png',
   },
   openGraph: {
-    title: 'Durgesh tiwari Nizamabad | Kaal Sarp Dosh Puja',
+    title: 'Acharya Durgesh Tiwari | Vedic Astrologer | Priest | Spiritual Consultant',
     description:
-      'Book Kaal Sarp Dosh Puja at Trimbakeshwar with Pandit Ravi Guruji. 30+ years experience, 32,000+ pujas performed.',
-    url: 'https://example.com',
-    siteName: 'Durgesh tiwari Nizamabad',
+      'Vedic Astrologer, Priest, Spiritual Consultant trained at Kashi Vishwavidyalaya, Varanasi. Expert in Jyotish Shastra, Vaidik-Tantrik Pujas, Vastu Shanti, and life ceremonies. Online consultations & in-person rituals across India and abroad.',
+    url: 'https://acharya-durgesh-tiwari.vercel.app',
+    siteName: 'Acharya Durgesh Tiwari',
     images: [
-      { url: '/og.png', width: 1200, height: 630, alt: 'Trimbakeshwar Pandit Services' },
+      { url: '/og.png', width: 1200, height: 630, alt: 'Acharya Durgesh Tiwari - Vedic Astrologer & Spiritual Consultant' },
     ],
     type: 'website',
   },
-  metadataBase: new URL('https://example.com'),
+  metadataBase: new URL('https://acharya-durgesh-tiwari.vercel.app'),
 }
 
 export const viewport = {
